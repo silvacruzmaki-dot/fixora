@@ -14,7 +14,7 @@ export default function Logo() {
         hover:opacity-90
       "
     >
-      {/* LOGO CONTAINER */}
+      {/* LOGO */}
 
       <div
         className="
@@ -29,53 +29,40 @@ export default function Logo() {
           border
           border-white/10
           bg-white
+          p-2
           shadow-[0_8px_28px_rgba(0,0,0,0.10)]
           dark:border-white/5
           dark:bg-white
         "
       >
         <Image
-          src="/LOGO.webp"
+          src="/Logo.svg"
           alt="FIXORA Logo"
           fill
           priority
           sizes="60px"
           className="
-            object-cover
+            object-contain
           "
         />
       </div>
 
       {/* BRAND */}
 
-      <div className="flex flex-col leading-none">
-        <h1
-          className="
-            text-[1.28rem]
-            font-black
-            tracking-[0.22em]
-            text-foreground
-          "
-        >
-          FIX
-          <span className="text-primary">
-            ORA
-          </span>
-        </h1>
-
-        <span
-          className="
-            mt-1.5
-            text-[10px]
-            font-semibold
-            uppercase
-            tracking-[0.30em]
-            text-muted
-          "
-        >
-          SMART TECHNOLOGY
+      <h1
+        className="
+          text-[1.28rem]
+          font-black
+          tracking-[0.22em]
+          text-foreground
+          leading-none
+        "
+      >
+        FIX
+        <span className="text-primary">
+          ORA
         </span>
-      </div>
+      </h1>
     </Link>
   );
 }

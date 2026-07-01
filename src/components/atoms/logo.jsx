@@ -17,24 +17,24 @@ export default function Logo() {
       {/* LOGO */}
 
       <div
-        className="
-          relative
-          flex
-          h-[60px]
-          w-[60px]
-          items-center
-          justify-center
-          overflow-hidden
-          rounded-[1.3rem]
-          border
-          border-white/10
-          bg-white
-          p-2
-          shadow-[0_8px_28px_rgba(0,0,0,0.10)]
-          dark:border-white/5
-          dark:bg-white
-        "
-      >
+  className="
+    relative
+    flex
+    h-[50px]
+    w-[50px]
+    items-center
+    justify-center
+    overflow-hidden
+    rounded-[1.1rem]
+    border
+    border-white/10
+    bg-white
+    p-2
+    shadow-[0_8px_28px_rgba(0,0,0,0.10)]
+    dark:border-white/5
+    dark:bg-white
+  "
+>
         <Image
           src="/Logo.svg"
           alt="FIXORA Logo"

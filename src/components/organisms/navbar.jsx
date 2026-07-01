@@ -8,6 +8,8 @@ import {
   useState,
 } from "react";
 
+import { usePathname } from "next/navigation";
+
 import {
   HiOutlineBars3,
   HiOutlineXMark,
@@ -55,7 +57,12 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+
   const [menuOpen, setMenuOpen] =
+    useState(false);
+
+  const [hideNavbar, setHideNavbar] =
     useState(false);
 
   const menuRef = useRef(null);
@@ -89,44 +96,67 @@ export default function Navbar() {
     };
   }, [menuOpen]);
 
+  /* CREATIVE MODAL DETECTOR */
+
+  useEffect(() => {
+    const observer =
+      new MutationObserver(() => {
+        setHideNavbar(
+          document.body.classList.contains(
+            "creative-modal-open"
+          )
+        );
+      });
+
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  if (
+    pathname === "/creative" &&
+    hideNavbar
+  ) {
+    return null;
+  }
+
   return (
     <>
       {/* DESKTOP NAVBAR */}
 
-      <header
-        className="
-          fixed
-          top-5
-          left-1/2
-          z-50
-          hidden
-          w-[94%]
-          max-w-7xl
-          -translate-x-1/2
-          lg:block
-        "
-      >
-        <nav
-          className="
-            flex
-            items-center
-            justify-between
-            rounded-[2rem]
-            border
-            border-white/10
-            bg-white/70
-            px-8
-            py-4
-            shadow-[var(--shadow)]
-            backdrop-blur-2xl
-            dark:bg-black/40
-          "
-        >
-          {/* LOGO */}
-
+    <header
+  className="
+    fixed
+    top-4
+    left-1/2
+    z-50
+    hidden
+    w-[94%]
+    max-w-7xl
+    -translate-x-1/2
+    lg:block
+  "
+>
+<nav
+  className="
+    flex
+    items-center
+    justify-between
+    rounded-[1.6rem]
+    border
+    border-white/10
+    bg-white/70
+    px-4
+    py-2
+    shadow-[var(--shadow)]
+    backdrop-blur-2xl
+    dark:bg-black/40
+  "
+>
           <Logo />
-
-          {/* NAV LINKS */}
 
           <div
             className="
@@ -169,42 +199,38 @@ export default function Navbar() {
         "
       >
         <div ref={menuRef}>
-          <nav
-            className="
-              flex
-              items-center
-              justify-between
-              rounded-[1.8rem]
-              border
-              border-white/10
-              bg-white/70
-              px-5
-              py-4
-              shadow-[var(--shadow)]
-              backdrop-blur-2xl
-              dark:bg-black/40
-            "
-          >
-            {/* LOGO */}
-
+<nav
+  className="
+    flex
+    items-center
+    justify-between
+    rounded-[1.4rem]
+    border
+    border-white/10
+    bg-white/70
+    px-4
+    py-2
+    shadow-[var(--shadow)]
+    backdrop-blur-2xl
+    dark:bg-black/40
+  "
+>
             <Logo />
 
-            {/* MENU BUTTON */}
-
-            <button
-              onClick={() =>
-                setMenuOpen(!menuOpen)
-              }
-              className="
-                flex
-                items-center
-                justify-center
-                rounded-2xl
-                border
-                border-white/10
-                bg-white/20
-                p-3
-                text-foreground
+<button
+  onClick={() =>
+    setMenuOpen(!menuOpen)
+  }
+  className="
+    flex
+    items-center
+    justify-center
+    rounded-xl
+    border
+    border-white/10
+    bg-white/20
+    p-2
+    text-foreground
                 backdrop-blur-xl
                 transition-all
                 duration-300
@@ -224,8 +250,6 @@ export default function Navbar() {
               )}
             </button>
           </nav>
-
-          {/* MOBILE FLOATING MENU */}
 
           {menuOpen && (
             <div

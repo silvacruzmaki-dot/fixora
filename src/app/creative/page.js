@@ -1,43 +1,16 @@
+import CreativeHero from "@/components/organisms/CreativeHero";
+import CreativeCategoriesSection from "@/components/organisms/CreativeCategoriesSection";
+import CreativeLibrarySection from "@/components/organisms/CreativeLibrarySection";
+
 export default function CreativePage() {
   return (
-    <main className="min-h-screen bg-background px-6 pt-32 text-foreground">
-      <div className="mx-auto max-w-7xl">
-        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-primary">
-          FIXORA
-        </p>
+    <main className="min-h-screen bg-background text-foreground">
+      <div className="mx-auto max-w-7xl px-6">
+        <CreativeHero />
 
-        <h1 className="text-5xl font-black tracking-tight">
-          Creative
-        </h1>
+        <CreativeCategoriesSection />
 
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-          Diseño gráfico, branding y contenido visual profesional.
-        </p>
-
-        <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {[
-            "Branding",
-            "Adobe",
-            "Flyers",
-            "Edición",
-          ].map((item) => (
-            <div
-              key={item}
-              className="
-                rounded-3xl
-                border
-                border-border
-                bg-card
-                p-8
-                shadow-[var(--shadow)]
-              "
-            >
-              <h2 className="text-2xl font-bold text-foreground">
-                {item}
-              </h2>
-            </div>
-          ))}
-        </div>
+        <CreativeLibrarySection />
       </div>
     </main>
   );

@@ -1,123 +1,135 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section
       className="
         relative
-        flex
-        min-h-screen
-        items-center
-        justify-center
         overflow-hidden
+        py-24
         px-6
-        pt-24
       "
     >
       <div
         className="
-          absolute
-          inset-0
-          bg-[radial-gradient(circle_at_top,rgba(76,175,80,0.18),transparent_45%)]
-        "
-      />
-
-      <div
-        className="
-          relative
-          z-10
           mx-auto
-          max-w-5xl
-          text-center
+          grid
+          max-w-6xl
+          items-center
+          gap-12
+          md:grid-cols-2
         "
       >
-        <p
-          className="
-            mb-6
-            text-sm
-            font-bold
-            uppercase
-            tracking-[0.35em]
-            text-primary
-          "
-        >
-          Smart Technology Solutions
-        </p>
+        {/* LEFT CONTENT */}
+        <div>
+          <p className="text-primary font-semibold">
+            FIXORA
+          </p>
 
-        <h1
-          className="
-            text-5xl
-            font-black
-            leading-tight
-            tracking-tight
-            text-foreground
-            md:text-7xl
-          "
-        >
-          Tecnología moderna
-          <br />
-          para personas y negocios
-        </h1>
-
-        <p
-          className="
-            mx-auto
-            mt-8
-            max-w-3xl
-            text-lg
-            leading-8
-            text-muted
-          "
-        >
-          FIXORA ofrece mantenimiento profesional,
-          instalación de software, diseño gráfico y
-          soluciones tecnológicas premium para potenciar
-          tu productividad.
-        </p>
-
-        <div
-          className="
-            mt-12
-            flex
-            flex-wrap
-            items-center
-            justify-center
-            gap-4
-          "
-        >
-          <button
+          <h1
             className="
-              rounded-2xl
-              bg-primary
-              px-8
-              py-4
-              text-sm
+              mt-3
+              text-4xl
               font-bold
-              text-black
-              transition-all
-              duration-300
-              hover:scale-105
+              leading-tight
+              md:text-5xl
             "
           >
-            Explorar Servicios
-          </button>
+            Tecnología moderna para hogares y empresas
+          </h1>
 
-          <button
+          <p className="mt-5 text-muted leading-7">
+            Optimización, soporte técnico y soluciones digitales
+            para que tu equipo funcione al máximo rendimiento.
+          </p>
+
+          {/* BUTTONS */}
+          <div className="mt-8 flex gap-4">
+            <button
+              className="
+                rounded-xl
+                bg-primary
+                px-6
+                py-3
+                font-medium
+                text-white
+                hover:opacity-90
+              "
+            >
+              Solicitar diagnóstico
+            </button>
+
+            <button
+              className="
+                rounded-xl
+                border
+                border-border
+                px-6
+                py-3
+                font-medium
+                hover:bg-muted
+              "
+            >
+              Ver servicios
+            </button>
+          </div>
+
+          {/* MINI STATS */}
+          <div
             className="
-              rounded-2xl
-              border
-              border-border
-              bg-card
-              px-8
-              py-4
-              text-sm
-              font-bold
-              text-foreground
-              transition-all
-              duration-300
-              hover:border-primary
+              mt-10
+              grid
+              grid-cols-2
+              gap-4
+              md:grid-cols-4
             "
           >
-            Ver Proyectos
-          </button>
+            <div>
+              <p className="text-xl font-bold">500+</p>
+              <p className="text-sm text-muted">Clientes</p>
+            </div>
+
+            <div>
+              <p className="text-xl font-bold">300+</p>
+              <p className="text-sm text-muted">Equipos</p>
+            </div>
+
+            <div>
+              <p className="text-xl font-bold">98%</p>
+              <p className="text-sm text-muted">Satisfacción</p>
+            </div>
+
+            <div>
+              <p className="text-xl font-bold">24h</p>
+              <p className="text-sm text-muted">Soporte</p>
+            </div>
+          </div>
+        </div>
+
+        {/* RIGHT IMAGE */}
+        <div className="relative">
+          <div
+            className="
+              absolute
+              -inset-8
+              rounded-full
+              bg-primary/10
+              blur-3xl
+            "
+          />
+
+          <Image
+            src="/home/fixora-hero.webp"
+            alt="FIXORA Hero"
+            width={600}
+            height={600}
+            className="
+              relative
+              rounded-3xl
+              object-cover
+              shadow-2xl
+            "
+          />
         </div>
       </div>
     </section>

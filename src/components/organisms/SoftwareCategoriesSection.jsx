@@ -1,83 +1,69 @@
 import SectionBadge from "../atoms/SectionBadge";
 import SoftwareCategoryCard from "../molecules/SoftwareCategoryCard";
-import {
-  FiBookOpen,
-  FiBriefcase,
-  FiCpu,
-  FiDatabase,
-  FiDownloadCloud,
-  FiEdit3,
-  FiFileText,
-  FiGrid,
-  FiMonitor,
-  FiPenTool,
-  FiSettings,
-  FiShield,
-} from "react-icons/fi";
 
 const categories = [
   {
-    icon: FiMonitor,
+    iconName: "monitor",
     title: "Sistemas operativos",
     description:
       "Software base para equipos de escritorio y laptops, instalación y configuración inicial.",
   },
   {
-    icon: FiFileText,
+    iconName: "file",
     title: "Ofimática",
     description:
       "Programas para documentos, hojas de cálculo, presentaciones y trabajo administrativo.",
   },
   {
-    icon: FiShield,
+    iconName: "shield",
     title: "Antivirus y seguridad",
     description:
       "Soluciones para proteger equipos contra virus, amenazas, archivos maliciosos y riesgos digitales.",
   },
   {
-    icon: FiPenTool,
+    iconName: "pen",
     title: "Diseño gráfico",
     description:
       "Herramientas para edición visual, diseño de piezas gráficas, branding y contenido digital.",
   },
   {
-    icon: FiEdit3,
+    iconName: "edit",
     title: "Edición multimedia",
     description:
       "Programas para edición de imágenes, audio, video y contenido para redes sociales.",
   },
   {
-    icon: FiCpu,
+    iconName: "cpu",
     title: "Arquitectura e ingeniería",
     description:
       "Software técnico para diseño, planos, modelado, cálculo y trabajos profesionales.",
   },
   {
-    icon: FiBookOpen,
+    iconName: "book",
     title: "Software educativo",
     description:
       "Programas y herramientas digitales para estudiantes, docentes y aprendizaje virtual.",
   },
   {
-    icon: FiSettings,
+    iconName: "settings",
     title: "Utilitarios",
     description:
       "Herramientas para mantenimiento, compresión, recuperación, limpieza y optimización del sistema.",
   },
   {
-    icon: FiBriefcase,
+    iconName: "briefcase",
     title: "Software empresarial",
     description:
       "Soluciones digitales para gestión, administración, productividad y trabajo en equipo.",
   },
   {
-    icon: FiDatabase,
+    iconName: "database",
     title: "Bases de datos",
     description:
       "Herramientas para gestión de información, almacenamiento y administración de datos.",
   },
   {
-    icon: FiGrid,
+    iconName: "grid",
     title: "Otros programas",
     description:
       "También contamos con otros programas y soluciones digitales sujetos a disponibilidad.",
@@ -107,7 +93,7 @@ export default function SoftwareCategoriesSection() {
           {categories.map((category) => (
             <SoftwareCategoryCard
               key={category.title}
-              icon={category.icon}
+              iconName={category.iconName}
               title={category.title}
               description={category.description}
             />
